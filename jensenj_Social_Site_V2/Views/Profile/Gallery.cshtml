@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/Template.cshtml";
+}
+
+<h1>Gallery</h1>
+
+<div id="gallery">
+    @foreach (FileInfo path in (List<FileInfo>) ViewData["Paths"])
+{
+    <img src="~/Pics/@path.ToString()"/>
+}
+</div>
