@@ -198,11 +198,28 @@
 	padding-top: 15px;
 }
 
+#profHeader {
+    
+    display: inline;
+    
+}
+
+#profHeader h1 {
+    
+    
+}
+
 .profpic {
+    float: left;
 	max-width: 100px;
 	max-height: 100px;
-	float: left;
-	clear: both;
+    clear: both;
+	
+	
+}
+
+#about {
+    clear: both;
 }
 
 #bio {

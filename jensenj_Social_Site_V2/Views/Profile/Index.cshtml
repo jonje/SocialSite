@@ -1,22 +1,12 @@
-﻿
+﻿@model jensenj_Social_Site_V2.Models.Profile
+@{
+    Layout = Session["Layout"] as string;
+    ViewBag.Title = "Profile";
+    
+}
 
-<img class="profpic" src="~/Pics/prof.png"/><h1>Jonathan Jensen</h1><br /><br />
-				<h3>About Me:</h3>
-				<p id="bio">I like to write some code and to try and attempt to cook however I am not very good at that however, I am always looking to get better.</p>
-				<h4>Books:</h4>
-				<ul>
-					<li>Devil May Cry</li>
-					<li>Dresden Files</li>
-				</ul>
-				<h4>Movies</h4>
-				<ul> 
-					<li>Iron Man</li>
-					<li>Hackers</li>
-				</ul>
-				<h4>Food</h4>
-				<ul>
-					<li>Cheese Burgers</li>
-					<li>Steak</li>
-					<li>Encheladas</li>
-				</ul>
-
+<div id="profHeader">
+    <img class="profpic" src="~/Pics/prof.png" /><h1>Jonathan Jensen</h1>
+</div>
+@Html.ActionLink("Change Template", "ChangeLayout")
+@Html.Partial("_AboutPartialView", Model)

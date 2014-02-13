@@ -1,13 +1,14 @@
 ﻿@{
     ViewBag.Title = "Gallery";
-    Layout = "~/Views/Shared/Template.cshtml";
+    Layout = Session["Layout"] as string;
 }
 
 <h1>Gallery</h1>
 
 <div id="gallery">
-    @foreach (FileInfo path in (List<FileInfo>) ViewData["Paths"])
-{
-    <img src="~/Pics/@path.ToString()"/>
-}
+    @foreach (FileInfo path in (List<FileInfo>)ViewData["Paths"])
+    {
+        ViewData["img"] = path.ToString();
+        @Html.Partial("_GalleryImagePartial", ViewData)
+    }
 </div>
