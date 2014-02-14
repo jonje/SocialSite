@@ -1,0 +1,13 @@
+﻿@using System.Web.UI.WebControls
+@{
+    Layout = Session["Layout"] as string;
+    ViewBag.Title = "ChangeLayoutForm";
+}
+
+<h2>Change Layout</h2>
+@using (Html.BeginForm())
+{
+    @Html.DropDownList("LayoutTypes", new SelectList((List<ListItem>) ViewData["LayoutTypes"], "Text"), new {onchange="getAlldata()"})
+    <input type="submit" value="Change"/>
+}
+
